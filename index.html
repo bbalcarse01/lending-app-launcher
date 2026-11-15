@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1f5fbf">
+<title>Lending App</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>
+  html, body { height: 100%; margin: 0; background: #1f5fbf; color: #fff; font: 16px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  body { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; text-align: center; padding: 24px; }
+  img { width: 96px; height: 96px; border-radius: 22px; }
+  a { color: #fff; border: 1px solid rgba(255,255,255,.6); border-radius: 10px; padding: 12px 20px; text-decoration: none; font-weight: 600; }
+</style>
+</head>
+<body>
+<img src="icon-192.png" alt="">
+<div>Opening Lending App…</div>
+<a id="go" href="https://script.google.com/macros/s/AKfycbye1tiXHEhpZ-sC_3irQMw3Bx8Pe38iHcZ8OuWNYbdEr6OD8bzTXD0mKqVKx1xgITBkpA/exec">Tap here if it does not open</a>
+<script>
+  // This page holds no data. It only gives the phone an app icon and opens the real app.
+  if ('serviceWorker' in navigator) { navigator.serviceWorker.register('sw.js').catch(function () {}); }
+  setTimeout(function () { location.replace(document.getElementById('go').href); }, 300);
+</script>
+</body>
+</html>
